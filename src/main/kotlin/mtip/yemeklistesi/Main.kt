@@ -6,7 +6,7 @@ import org.jsoup.nodes.Element
 import java.net.URL
 
 object Main {
-    private const val url = "https://hastane.erbakan.edu.tr/insan-kaynaklari-birimi/yemek-listesi"
+    private const val url = "https://hastane.erbakan.edu.tr/insan-kaynaklari-birimi/yemek-listesi/"
 
     @JvmStatic
     fun main(argo: Array<String>) {
