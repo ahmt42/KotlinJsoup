@@ -1,1 +1,1 @@
-C:\Users\ahmet\Desktop\KotlinProjects\KotlinJsoup\build\classes\kotlin\main\mtip\yemeklistesi\Info.class;C:\Users\ahmet\Desktop\KotlinProjects\KotlinJsoup\build\classes\kotlin\main\mtip\yemeklistesi\Main.class
+C:\Users\ahmet\Desktop\KotlinProjects\KotlinJsoup\build\classes\kotlin\main\foodlist\Info.class;C:\Users\ahmet\Desktop\KotlinProjects\KotlinJsoup\build\classes\kotlin\main\foodlist\MeramTip.class

@@ -1,12 +1,12 @@
-package mtip.yemeklistesi
+package foodlist
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 import java.net.URL
 
-object Main {
-    private const val url = "https://hastane.erbakan.edu.tr/insan-kaynaklari-birimi/yemek-listesi/"
+object MeramTip {
+    private const val url = "https://hastane.erbakan.edu.tr/insan-kaynaklari-birimi/yemek-listesi"
 
     @JvmStatic
     fun main(argo: Array<String>) {
@@ -22,7 +22,7 @@ object Main {
         val html = URL(url).readText()
         val document = Jsoup.parse("utf-8", html)
         println(document.getElementsByTag("title").first())
-        parseDocument(document)
+        parseDocumentC2(document)
     }
 
     /**
@@ -30,10 +30,10 @@ object Main {
      */
     private fun getDataByJsoup() {
         val document = Jsoup.connect(url).get()
-        parseDocument(document)
+        parseDocumentC2(document)
     }
 
-    private fun parseDocument(document: Document) {
+    private fun parseDocumentC1(document: Document) {
         val postItems = document.select(".table-yemeklistesi:first-of-type tbody tr")
         val infoes = arrayListOf<Info>()
 
@@ -55,7 +55,7 @@ object Main {
         printList(infoes)
     }
 
-    private fun parseDocumentt(document: Document) {
+    private fun parseDocumentC2(document: Document) {
         val infoes = arrayListOf<Info>()
 
         document.select(".table-yemeklistesi:first-of-type tbody tr")
@@ -88,10 +88,10 @@ object Main {
 
     private fun printList(arr: List<Info>) {
         arr.forEach {
-            println("TARİH : " + it.date)
-            println("KAHVALTI : " + it.breakfast.get(0) + " / " + it.breakfast.get(1) + " / " + it.breakfast.get(2))
-            println("ÖĞLE : " + it.lunch.get(0) + " / " + it.lunch.get(1) + " / " + it.lunch.get(2))
-            println("AKŞAM : " + it.dinner.get(0) + " / " + it.dinner.get(1) + " / " + it.dinner.get(2))
+            println("TARİH    : " + it.date)
+            println("KAHVALTI : " + it.breakfast.get(0) + "  |  " + it.breakfast.get(1) + "  |  " + it.breakfast.get(2))
+            println("ÖĞLE     : " + it.lunch.get(0) + "  |  " + it.lunch.get(1) + "  |  " + it.lunch.get(2))
+            println("AKŞAM    : " + it.dinner.get(0) + "  |  " + it.dinner.get(1) + "  |  " + it.dinner.get(2))
             println("-----------------------------------------------------------------------------------------------------------")
         }
     }
