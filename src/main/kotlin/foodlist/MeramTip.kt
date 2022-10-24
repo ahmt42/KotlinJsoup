@@ -53,7 +53,9 @@ object MeramTip {
         }
 
         printList(infoes)
+        printTomorrow(infoes)
     }
+
 
     private fun parseDocumentC2(document: Document) {
         val infoes = arrayListOf<Info>()
@@ -66,6 +68,7 @@ object MeramTip {
             .forEach { infoes.add(it) }
 
         printList(infoes)
+        printTomorrow(infoes)
     }
 
 
@@ -86,8 +89,8 @@ object MeramTip {
         return info
     }
 
-    private fun printList(arr: List<Info>) {
-        arr.forEach {
+    private fun printList(infoes: ArrayList<Info>) {
+        infoes.forEach {
             println("TARİH    : " + it.date)
             println("KAHVALTI : " + it.breakfast.get(0) + "  |  " + it.breakfast.get(1) + "  |  " + it.breakfast.get(2))
             println("ÖĞLE     : " + it.lunch.get(0) + "  |  " + it.lunch.get(1) + "  |  " + it.lunch.get(2))
@@ -96,5 +99,15 @@ object MeramTip {
         }
     }
 
+    private fun printTomorrow(infoes: ArrayList<Info>) {
+        for ((index, value) in infoes.withIndex()) {
+            if (value.date == "Bugün") {
+                println("The date of tomorrow is ${infoes[index+1].date}")
+                println("KAHVALTI : " + infoes[index+1].breakfast.get(0) + "  |  " + infoes[index+1].breakfast.get(1) + "  |  " + infoes[index+1].breakfast.get(2))
+                println("ÖĞLE     : " + infoes[index+1].lunch.get(0) + "  |  " + infoes[index+1].lunch.get(1) + "  |  " + infoes[index+1].lunch.get(2))
+                println("AKŞAM    : " + infoes[index+1].dinner.get(0) + "  |  " + infoes[index+1].dinner.get(1) + "  |  " + infoes[index+1].dinner.get(2))
+            }
+        }
 
+    }
 }
