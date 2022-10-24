@@ -53,7 +53,7 @@ object MeramTip {
         }
 
         printList(infoes)
-        printTomorrow(infoes)
+        //printTomorrow(infoes)
     }
 
 
@@ -68,7 +68,7 @@ object MeramTip {
             .forEach { infoes.add(it) }
 
         printList(infoes)
-        printTomorrow(infoes)
+        //printTomorrow(infoes)
     }
 
 
@@ -99,6 +99,7 @@ object MeramTip {
         }
     }
 
+    /*
     private fun printTomorrow(infoes: ArrayList<Info>) {
         for ((index, value) in infoes.withIndex()) {
             if (value.date == "Bugün") {
@@ -108,6 +109,7 @@ object MeramTip {
                 println("AKŞAM    : " + infoes[index+1].dinner.get(0) + "  |  " + infoes[index+1].dinner.get(1) + "  |  " + infoes[index+1].dinner.get(2))
             }
         }
-
     }
+    */
+
 }
