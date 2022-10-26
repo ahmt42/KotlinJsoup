@@ -103,9 +103,9 @@ object MeramTip {
         for ((index, value) in infoes.withIndex()) {
             if (value.date == "Bugün") {
                 println("The date of tomorrow is ${infoes[index+1].date} :")
-                println("KAHVALTI : " + infoes[index+1].breakfast.get(0) + "  |  " + infoes[index+1].breakfast.get(1) + "  |  " + infoes[index+1].breakfast.get(2))
-                println("ÖĞLE     : " + infoes[index+1].lunch.get(0) + "  |  " + infoes[index+1].lunch.get(1) + "  |  " + infoes[index+1].lunch.get(2))
-                println("AKŞAM    : " + infoes[index+1].dinner.get(0) + "  |  " + infoes[index+1].dinner.get(1) + "  |  " + infoes[index+1].dinner.get(2))
+                println("KAHVALTI : ${infoes[index+1].breakfast.get(0)}  |  ${infoes[index+1].breakfast.get(1)}  |  ${infoes[index+1].breakfast.get(2)}")
+                println("ÖĞLE     : ${infoes[index+1].lunch.get(0)}  |  ${infoes[index+1].lunch.get(1)}  |  ${infoes[index+1].lunch.get(2)}")
+                println("AKŞAM    : ${infoes[index+1].dinner.get(0)}  |  ${infoes[index+1].dinner.get(1)}  |  ${infoes[index+1].dinner.get(2)}")
             }
         }
     }
