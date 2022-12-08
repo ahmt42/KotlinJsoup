@@ -23,7 +23,7 @@ object JobList {
                     .eq(i)
                     .text()
                 val link = events.select("div.base-card")
-                    .select("a")
+                    .select("a.base-card__full-link")
                     .eq(i)
                     .attr("href")
                 val company = events.select("div.base-search-card__info")
@@ -34,28 +34,20 @@ object JobList {
                     .select("h4 a")
                     .eq(i)
                     .attr("href")
-
-
-                val date = events.select("ul > li:nth-child(2) > strong")
-                    .eq(i)
-                    .text()
-                val desc = events.select("a img")
-                    .eq(i)
-                    .attr("alt")
-                val eventUrl = url + events.select("a")
-                    .eq(i)
-                    .attr("href")
-                val image = url + events.select("a")
+                val companyImage = events.select("div.search-entity-media")
                     .select("img")
                     .eq(i)
-                    .attr("src")
+                    .attr("data-delayed-url")
 
+                println(i)
                 println(title)
                 println(link)
                 println(company)
                 println(companyLink)
+                println(companyImage)
                 println()
             }
+            println(eventsSize)
         } catch (e: IOException) {
             e.printStackTrace()
         }
