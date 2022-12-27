@@ -73,8 +73,6 @@ object MeramTip {
 
 
     private fun extractData(element: Element): Info {
-        //println(element.select("td").get(0))
-
         var date = element.select("td").get(0).text()
         val breakfast = element.select("td").get(1).toString()
         val lunch = element.select("td").get(2).toString()
